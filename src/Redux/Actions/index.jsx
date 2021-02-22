@@ -36,3 +36,8 @@ export const searchTodo = (val) =>({
 	type: 'SEARCH',
 	payload: val
 })
+
+export const filterTodo = (val) =>({
+	type: 'FILTER',
+	payload: val
+})

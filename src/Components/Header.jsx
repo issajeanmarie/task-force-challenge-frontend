@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Search from './Search.jsx';
 
 import { BiFilter } from 'react-icons/bi';
 
 export function Header() {
+
+	const [state, setState] = useState(false);
+
+	useEffect(() => {
+		const filters = document.querySelector('#filters');
+
+		//Set state by default
+		if (state) {
+			filters.classList.remove('close');
+		} else{
+			filters.classList.add('close');
+		}
+	})
 
 	const Header = styled.div`
 		padding: 20px;
@@ -45,7 +58,7 @@ export function Header() {
 			</Logo>
 			<Side>
 				<Search />
-				<Filter>
+				<Filter onClick={() => setState(!state)}>
 					<BiFilter />
 				</Filter>
 				<TheButton text="NEW TASK" />

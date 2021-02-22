@@ -20,6 +20,16 @@ const showTodos = (state = stateVal, action) => {
 				return state = result;
 			}
 
+		case 'FILTER':
+			{
+				//Filter array
+				const oldData = [...stateVal];
+				const filterBy = action.payload;
+				const result = 
+				 oldData.filter(data => data.prio === filterBy);
+				return state = result;
+			}
+
 		case 'DELETE_TODO':
 			{
 				const backup = JSON.stringify(action.payload)
@@ -44,11 +54,12 @@ const showTodos = (state = stateVal, action) => {
 
 		case 'ADD_TO_DO':
 			{
-				const backup = JSON.stringify(action.payload)
+				const newState = [...stateVal, action.payload]
+				const backup = JSON.stringify(newState)
 				localStorage.setItem('todoList', backup);
 
 				return (
-					state = action.payload,
+					state = newState,
 					stateVal = state
 				)
 			}

@@ -54,8 +54,7 @@ function Wrapper() {
 		};
 
 		//SUBMIT TO REDUX
-		const newTodos = [...oldTodos, todo];
-		dispatch(addToDo(newTodos));
+		dispatch(addToDo(todo));
 		
 		//Reset the form
 		setTitle('');
