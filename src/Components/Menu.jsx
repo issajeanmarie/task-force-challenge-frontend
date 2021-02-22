@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SingleMenu from './SingleMenu.jsx';
+import FilterChoice from './FilterChoice.jsx';
 import { useSelector } from 'react-redux';
 
 function Menu() {
@@ -17,11 +18,11 @@ function Menu() {
 
 	const Menu = styled.div`
 		background: #F4F5F6;
-		padding: 25px 12px;
+		padding: 50px 12px;
 		display: flex;
 		justify-content: space-around;
-		flex-wrap: nowrap;
 		overflow-x: auto;
+		position: relative;
 	`;
 
 	const types = [
@@ -41,6 +42,7 @@ function Menu() {
 				<SingleMenu type='Tasks Done' number={doneTaks.length} />
 				<SingleMenu type='Active High Priority' number={activeHigh.length} />
 				<SingleMenu type='Closed High Priority' number={closedHigh.length} />
+				<FilterChoice />
 			</Menu>
 		</React.Fragment>
 	)

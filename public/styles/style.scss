@@ -219,3 +219,33 @@ body{
 		cursor: pointer;
 	}
 }
+
+.priorities{
+	position: absolute;
+	background: #FFFFFF;
+	height: auto;
+	top: 0;
+	right: 9%;
+	border-radius: 4px;
+	padding: 12px;
+
+	h1{
+		font-size: 0.7em;
+		padding: 12px 6px;
+		text-align: center;
+		border-bottom: 1px solid #F4F5F6; 
+		margin-bottom: 5px;
+	}
+
+	p{
+		font-size: 0.65em;
+		padding: 6px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #495D69;
+	}
+}
+
+.priorities.close{
+	display: none;
+}
