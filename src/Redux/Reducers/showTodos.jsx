@@ -9,6 +9,10 @@ const showTodos = (state = stateVal, action) => {
 	switch(action.type) {
 		case 'SHOW_TODO':
 			return state = stateVal;
+
+		case 'SEARCH':
+			return state = action.payload;
+
 		case 'DELETE_TODO':
 			{
 				const backup = JSON.stringify(action.payload)

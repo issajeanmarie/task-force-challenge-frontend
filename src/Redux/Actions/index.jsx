@@ -31,3 +31,8 @@ export const changeEdit = (val) =>({
 	type: 'CHANGE_EDIT_ID',
 	payload: val
 })
+
+export const searchTodo = (val) =>({
+	type: 'SEARCH',
+	payload: val
+})
