@@ -11,7 +11,14 @@ const showTodos = (state = stateVal, action) => {
 			return state = stateVal;
 
 		case 'SEARCH':
-			return state = action.payload;
+			{
+				//Filter array
+				const oldData = [...stateVal];
+				const search = action.payload.toLowerCase()
+				const result = 
+				 oldData.filter(data => data.title.toLowerCase().includes(search));
+				return state = result;
+			}
 
 		case 'DELETE_TODO':
 			{
