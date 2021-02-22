@@ -1,12 +1,181 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+$whiteGrey : #F4F5F6;
+
 *{
 	padding: 0;
 	margin: 0;
 	transition: 0.3s;
+	box-sizing: border-box;
 }
 
 body{
 	font-family: Montserrat;
+	background: $whiteGrey;
+}
+
+#root{
+	position: relative;
+}
+
+.shadow{
+	box-shadow: 0px 0px 7px lighten(#495D69, 50%);
+}
+
+.shadow-md{
+	box-shadow: 0px 3px 7px lighten(#495D69, 40%);
+}
+
+.Done:hover{
+	background: darken(#FFFFFF, 13%);
+}
+
+
+//Designing the wrapper
+.wrapper{
+	background: rgba(0,0,0,0.65);
+	width: 100%;
+	height: 800px;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+}
+
+.wrapper.delte{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.newTodo{
+	background: #FFFFFF;
+	margin: 4% auto;
+	width: 50%;
+	height: 0 auto;
+	border-radius: 4px;
+	padding: 25px;
+	padding-bottom: 60px;
+	color: #0C0D0D;
+	position: relative;
+
+	.Close{
+		position: absolute;
+		right: 25px;
+		cursor: pointer;
+		font-size: 1.4em;
+		font-weight: bold;	
+	}
+
+	h1{
+		font-size: 1.3em;
+		padding: 15px 0px 25px 0px;
+		font-weight: bold;
+	}
+
+	label{
+		display: block;
+		font-weight: bold;
+		margin: 7px 0;
+		font-size: 0.7em;
+	}
+
+	.fileWrapper{
+		background: $whiteGrey;
+		width: 50%;
+		height: 100px;
+		color: darken($whiteGrey, 30%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		position: relative;
+		font-family: Montserrat, sans-serif;
+		border-radius: 6px;
+		font-size: 0.65em;
+
+		input{
+			position: absolute;
+			right: 0;
+			height: 0;
+			top: 0;
+			bottom: 0;
+			min-height: 100%;
+			opacity: 0;
+			cursor: pointer;
+		}
+	}
+
+	input{
+		background: $whiteGrey;
+		width: 100%;
+		height: 40px;
+		padding: 12px;
+		border: none;
+		border-radius: 6px;
+		font-family: Montserrat, sans-serif;
+		font-size: 0.65em;
+		
+		&:focus{
+			background: #FFFFFF;
+		}
+	}
+
+	textarea {
+		@extend input;
+		max-width: 100%;
+		min-height: 70px;
+	}
+
+	select {
+		@extend input;
+	}
+
+	button{
+		background: #0C0D0D;
+		border-radius: 3px;
+		padding: 12px 30px;
+		border: none;
+		color: $whiteGrey;
+		position: absolute;
+		right: 0px;
+		cursor: pointer;
+
+		&:hover{
+			background: lighten(#0C0D0D, 10%);
+		}
+	}
+}
+
+.deleteTodo{
+	@extend .newTodo;
+	width: 30%;
+	margin-top: 16%;
+
+	h1{
+		padding: 12px 0;
+	}
+
+	p{
+		padding: 12px 0;
+		margin-bottom: 12px;
+	}
+
+	button{
+		position: absolute;
+		left: 12px;
+	}
+
+	p.cancer{
+		position: absolute;
+		right: 35px;
+		font-weight: bold;
+		font-size: 0.8em;
+		cursor: pointer;
+	}
+}
+
+
+.wrapper.close{
+	display: none;
 }
