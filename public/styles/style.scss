@@ -317,6 +317,24 @@ button.theButton{
 	position: relative;
 }
 
+.singleMenu{
+	background: #FFFFFF;
+	padding: 12px;
+	border-radius: 4px;
+	width: 130px;
+
+	h1{
+		color: #C1CF16;
+		font-size: 1.5em;
+	}
+
+	p{
+		font-weight: bold;
+		color: #0C0D0D;
+		font-size: 0.6em;
+	}
+}
+
 .priorities.close, .hide_read{
 	display: none;
 }
