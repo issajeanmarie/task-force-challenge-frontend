@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import reactDOM from 'react-dom';
 import { changeEdit, editToDo, changeShow } from '../Redux/Actions/index.jsx';
 import { GrFormClose } from 'react-icons/gr';
-import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 
 function EditWrapper() {
@@ -83,23 +82,6 @@ function EditWrapper() {
 
 	}
 
-	const Button = styled.button`
-		background: #0C0D0D;
-		color: #F4F5F6;
-		border: none;
-		border-radius: 4px;
-		min-width: 120px;
-		padding: 12px 25px;
-		margin: 0 4%;
-		font-weight: bold;
-		cursor: pointer;
-		font-size: 0.65em;
-
-		&:hover{
-			background: #495D69;
-		}
-	`;
-
 	return reactDOM.createPortal (
 		<React.Fragment>
 			<div className="newTodo">
@@ -139,7 +121,7 @@ function EditWrapper() {
 					</select>
 					<br /> <br />
 
-					<Button>EDIT TASK</Button>
+					<button className="theButton">EDIT TASK</button>
 				</form>
 			</div>
 		</React.Fragment>,

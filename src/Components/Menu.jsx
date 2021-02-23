@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import SingleMenu from './SingleMenu.jsx';
 import FilterChoice from './FilterChoice.jsx';
 import { useSelector } from 'react-redux';

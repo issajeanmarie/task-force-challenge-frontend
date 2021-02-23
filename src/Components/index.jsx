@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Header, TheButton } from './Header.jsx';
 import Menu from './Menu.jsx';
 import Contents from './Contents/index.jsx';
