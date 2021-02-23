@@ -13,10 +13,10 @@ import {
  		} from './Redux/Actions/index.jsx';
 
 /**
- * This is the documentation
+ * The container of all components.    
+ * It has FOUR main components wich include other components.
 */
 function App() {
-
 
   return (
       <>
