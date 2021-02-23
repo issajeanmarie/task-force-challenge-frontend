@@ -4,7 +4,6 @@ import { GrFormClose } from 'react-icons/gr';
 import { TheButton } from './Header.jsx';
 import { deleteToDo, changeDelete, changeShow } from '../Redux/Actions/index.jsx'
 import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
 
 function DeleteWrapper() {
 
@@ -36,23 +35,6 @@ function DeleteWrapper() {
 		dispatch(changeShow(false));
 	}
 
-	const Button = styled.button`
-		background: #0C0D0D;
-		color: #F4F5F6;
-		border: none;
-		border-radius: 4px;
-		min-width: 120px;
-		padding: 8px 25px;
-		margin: 0 4%;
-		font-weight: bold;
-		cursor: pointer;
-		font-size: 0.65em;
-
-		&:hover{
-			background: #495D69;
-		}
-	`;
-
 	return reactDOM.createPortal (
 		<React.Fragment>
 			<div className="deleteTodo">
@@ -60,7 +42,7 @@ function DeleteWrapper() {
 				<p>
 					If you delete this task you won't be able to reverse this action
 				</p>
-				<Button onClick={Delete}>DELETE TASK</Button>
+				<button className="theButton" onClick={Delete}>DELETE TASK</button>
 				<p className="cancer" onClick={close}>Cancer</p>
 			</div>
 		</React.Fragment>,
