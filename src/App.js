@@ -12,7 +12,9 @@ import {
       changeEdit
  		} from './Redux/Actions/index.jsx';
 
-
+/**
+ * This is the documentation
+*/
 function App() {
 
 
