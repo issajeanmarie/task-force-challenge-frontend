@@ -25,30 +25,15 @@ function Index({className}) {
 		show = 'hide_read'
 	}
 
-	const BlackCont = styled.div`
-		width: 100%;
-		height: 230px;
-		background: #1C2834;
-	`;
-
-	const Element = styled.div`
-		background: #FFFFFF;
-		width: 70%;
-		height: 700px;
-		border-radius: 4px;
-		margin: -160px auto 2% auto;
-	`;
-
-
 	return (
 		<React.Fragment>
-			<BlackCont />
+			<div className='blackCont'></div>
 			<ReadTodo className={show} />
-			<Element className={`shadow ${hide}`}>
+			<div className={`elements shadow ${hide}`}>
 				<Header />
 				<Menu></Menu>
 				<Contents Button = {TheButton} />
-			</Element>
+			</div>
 		</React.Fragment>
 	)
 }
