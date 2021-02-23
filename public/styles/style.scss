@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+//Colors
 $whiteGrey : #F4F5F6;
+$darkBlue: #495D69;
+$black: #0C0D0D;
+$white: #FFFFFF;
 
 *{
 	padding: 0;
@@ -28,15 +32,15 @@ body{
 }
 
 .shadow{
-	box-shadow: 0px 0px 7px lighten(#495D69, 50%);
+	box-shadow: 0px 0px 7px lighten($darkBlue, 50%);
 }
 
 .shadow-md{
-	box-shadow: 0px 3px 7px lighten(#495D69, 40%);
+	box-shadow: 0px 3px 7px lighten($darkBlue, 40%);
 }
 
 .Done:hover{
-	background: darken(#FFFFFF, 13%);
+	background: darken($white, 13%);
 }
 
 
@@ -55,12 +59,11 @@ body{
 }
 
 .newTodo{
-	@include commonTraits(#FFFFFF, 50%, 0 auto, 25px);
-	background: #FFFFFF;
+	@include commonTraits($white, 50%, 0 auto, 25px);
 	margin: 4% auto;
 	border-radius: 4px;
 	padding-bottom: 60px;
-	color: #0C0D0D;
+	color: $black;
 	position: relative;
 
 	.Close{
@@ -118,7 +121,7 @@ body{
 		font-size: 0.75em;
 		
 		&:focus{
-			background: #FFFFFF;
+			background: $white;
 		}
 	}
 
@@ -133,7 +136,7 @@ body{
 	}
 
 	button{
-		background: #0C0D0D;
+		background: $black;
 		border-radius: 3px;
 		padding: 12px 30px;
 		border: none;
@@ -143,7 +146,7 @@ body{
 		cursor: pointer;
 
 		&:hover{
-			background: lighten(#0C0D0D, 10%);
+			background: lighten($black, 10%);
 		}
 	}
 }
@@ -160,6 +163,7 @@ body{
 	p{
 		padding: 12px 0;
 		margin-bottom: 12px;
+		color: $darkBlue;
 	}
 
 	button{
@@ -191,6 +195,7 @@ body{
 	margin-right: 10px;
 
 	input{
+		background: $whiteGrey;
 		border: none;
 		flex: 1 1 auto;
 		height: 35px;
@@ -198,15 +203,14 @@ body{
 		padding-left: 34px;
 
 		&:focus{
-			background: #FFFFFF;
-			border: 1px solid #0C0D0D;
-			padding-left: 12px;
+			background: $white;
+			border: 1px solid $black;
 		}
 	}
 
 	button{
-		background: #495D69;
-		color: #FFFFFF;
+		background: $darkBlue;
+		color: $white;
 		font-weight: bold;
 		height: 35px;
 		border: none;
@@ -218,7 +222,7 @@ body{
 
 .priorities{
 	position: absolute;
-	background: #FFFFFF;
+	background: $white;
 	height: auto;
 	top: 0;
 	right: 9%;
@@ -229,7 +233,7 @@ body{
 		font-size: 0.7em;
 		padding: 12px 6px;
 		text-align: center;
-		border-bottom: 1px solid #F4F5F6; 
+		border-bottom: 1px solid $whiteGrey; 
 		margin-bottom: 5px;
 	}
 
@@ -238,12 +242,12 @@ body{
 		padding: 6px;
 		cursor: pointer;
 		font-weight: bold;
-		color: #495D69;
+		color: $darkBlue;
 	}
 }
 
 .elements{
-	@include commonTraits(#FFFFFF, 70%, 700px, 0);
+	@include commonTraits($white, 70%, 700px, 0);
 	border-radius: 4px;
 	margin: -160px auto 2% auto;
 }
@@ -268,24 +272,24 @@ body{
 }
 
 button.theButton{
-	background: #0C0D0D;
-	color: #F4F5F6;
+	background: $black;
+	color: $whiteGrey;
 	border: none;
 	border-radius: 4px;
 	min-width: 120px;
 	padding: 12px 25px;
-	margin: 0 4%;
+	margin: 0 2%;
 	font-weight: bold;
 	cursor: pointer;
 	font-size: 0.65em;
 
 	&:hover{
-		background: #495D69;
+		background: $darkBlue;
 	}
 }
 
 .filterCont{
-	@include commonTraits(#F4F5F6, 80%, 35px, 0);
+	@include commonTraits($whiteGrey, 60px, 35px, '');
 	border-radius: 4px;
 	margin-right: 24px;
 	text-align: center;
@@ -320,7 +324,7 @@ button.theButton{
 }
 
 .Menu{
-	background: #F4F5F6;
+	background: $whiteGrey;
 	padding: 50px 12px;
 	display: flex;
 	justify-content: space-around;
@@ -329,7 +333,7 @@ button.theButton{
 }
 
 .singleMenu{
-	background: #FFFFFF;
+	background: $white;
 	padding: 12px;
 	border-radius: 4px;
 	width: 130px;
@@ -341,7 +345,7 @@ button.theButton{
 
 	p{
 		font-weight: bold;
-		color: #0C0D0D;
+		color: $black;
 		font-size: 0.6em;
 	}
 }
@@ -352,14 +356,14 @@ button.theButton{
 	font-weight: bold;
 
 	h1{
-		color: #0C0D0D;
+		color: $black;
 		font-size: 0.7em;
 		padding: 6px;
 	}
 
 	p{
 		font-size: 0.65em;
-		color: #495D69;
+		color: $darkBlue;
 	}
 }
 
@@ -376,15 +380,15 @@ button.theButton{
 	&::-o-scrollbar {height: 7px; width: 7px;}
 	&::scrollbar {height: 7px; width: 7px;}
 
-	&::-webkit-scrollbar-track {background: #F4F5F6;}
-	&::-moz-scrollbar-track {background: #F4F5F6;}
-	&::-o-scrollbar-track {background: #F4F5F6;}
-	&::scrollbar-track {background: #F4F5F6;}
+	&::-webkit-scrollbar-track {background: $whiteGrey;}
+	&::-moz-scrollbar-track {background: $whiteGrey;}
+	&::-o-scrollbar-track {background: $whiteGrey;}
+	&::scrollbar-track {background: $whiteGrey;}
 
-	&::-webkit-scrollbar-thumb {background: #495D69;}
-	&::-moz-scrollbar-thumb {background: #495D69;}
-	&::-o-scrollbar-thumb {background: #495D69;}
-	&::scrollbar-thumb {background: #495D69;}
+	&::-webkit-scrollbar-thumb {background: $darkBlue;}
+	&::-moz-scrollbar-thumb {background: $darkBlue;}
+	&::-o-scrollbar-thumb {background: $darkBlue;}
+	&::scrollbar-thumb {background: $darkBlue;}
 
 	&::-webkit-scrollbar-thumb:hover {background: #1C2834;}
 	&::-moz-scrollbar-thumb:hover {background: #1C2834;}
@@ -392,7 +396,7 @@ button.theButton{
 	&::scrollbar-thumb:hover {background: #1C2834;}
 
 	h1{
-		color: #495D69;
+		color: $darkBlue;
 		padding: 20px;
 		padding-bottom: 10px;
 		font-weight: bold;
