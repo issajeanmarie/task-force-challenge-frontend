@@ -308,6 +308,15 @@ button.theButton{
 	align-items: center;
 }
 
+.Menu{
+	background: #F4F5F6;
+	padding: 50px 12px;
+	display: flex;
+	justify-content: space-around;
+	overflow-x: auto;
+	position: relative;
+}
+
 .priorities.close, .hide_read{
 	display: none;
 }

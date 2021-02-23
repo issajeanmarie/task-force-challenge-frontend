@@ -16,15 +16,6 @@ function Menu() {
 	//Closed high tasks
 	const closedHigh = showTodos.filter(showTodo => (showTodo.done === true && showTodo.prio === 'High'));
 
-	const Menu = styled.div`
-		background: #F4F5F6;
-		padding: 50px 12px;
-		display: flex;
-		justify-content: space-around;
-		overflow-x: auto;
-		position: relative;
-	`;
-
 	const types = [
 		'Total Tasks',
 		'Active Tasks',
@@ -35,7 +26,7 @@ function Menu() {
 
 	return (
 		<React.Fragment>
-			<Menu>
+			<div className="Menu">
 
 				<SingleMenu type='Total Tasks' number={showTodos.length} />
 				<SingleMenu type='Active Tasks' number={activeTaks.length} />
@@ -43,7 +34,7 @@ function Menu() {
 				<SingleMenu type='Active High Priority' number={activeHigh.length} />
 				<SingleMenu type='Closed High Priority' number={closedHigh.length} />
 				<FilterChoice />
-			</Menu>
+			</div>
 		</React.Fragment>
 	)
 }
