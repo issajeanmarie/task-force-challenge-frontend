@@ -4,8 +4,26 @@ import { Header, TheButton } from './Header.jsx';
 import Menu from './Menu.jsx';
 import Contents from './Contents/index.jsx';
 import ReadTodo from './ReadTodo.jsx';
+import { changeShow } from '../Redux/Actions/index.jsx';
+import { useSelector, useDispatch } from 'react-redux';
 
-function Index() {
+function Index({className}) {
+
+	//Get class to hide and show
+	const dispatch = useDispatch();
+	const oldShow = useSelector(state => state.changeShow);
+
+	//Variables to hide and show
+	let hide = '';
+	let show = '';
+
+	if (oldShow) {
+		hide = 'hide_read';
+		show = '';
+	} else{
+		hide = '';
+		show = 'hide_read'
+	}
 
 	const BlackCont = styled.div`
 		width: 100%;
@@ -25,12 +43,12 @@ function Index() {
 	return (
 		<React.Fragment>
 			<BlackCont />
-			<ReadTodo />
-			{/*<Element className="shadow allElements">
+			<ReadTodo className={show} />
+			<Element className={`shadow ${hide}`}>
 				<Header />
 				<Menu></Menu>
 				<Contents Button = {TheButton} />
-			</Element>*/}
+			</Element>
 		</React.Fragment>
 	)
 }

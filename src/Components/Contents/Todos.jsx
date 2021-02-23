@@ -5,7 +5,9 @@ import {
 	deleteToDo, 
 	doneToDo, 
 	changeDelete,
-	changeEdit 
+	changeEdit,
+	changeShow,
+	changeRead
 } from '../../Redux/Actions/index.jsx'
 
 import { MdEdit } from 'react-icons/md';
@@ -18,6 +20,8 @@ function Todos({showTodo, index, num}) {
 	const oldState = useSelector(state => state.showTodos);
 	const oldDelete = useSelector(state => state.changeDelete);
 	const oldEdit = useSelector(state => state.changeEdit);
+	const oldRead = useSelector(state => state.changeRead);
+	const oldShow = useSelector(state => state.changeShow);
 
 	const Done = () => {
 		//Change state
@@ -35,12 +39,19 @@ function Todos({showTodo, index, num}) {
 		//Create GLOBAL STORE FOR ID TO DELETE
 		dispatch(changeDelete(index));
 	}
+
 	const openEditForm = () => {
 		const wrapper = document.querySelector('#editWrapper');
 		wrapper.classList.remove('close');
 
 		//Create GLOBAL STORE FOR ID TO EDIT
 		dispatch(changeEdit(index));
+	}
+
+	const readTodo = () => {
+		//Change show status
+		dispatch(changeShow('show_read'));
+		dispatch(changeRead(index));
 	}
 
 
@@ -56,6 +67,7 @@ function Todos({showTodo, index, num}) {
 		box-sizing: border-box;
 		opacity: ${props => props.done === 'true' ? 0.4 : 1};
 		position: relative;
+		cursor: pointer;
 
 		.num, .title{
 			font-weight: bold;
@@ -147,10 +159,25 @@ function Todos({showTodo, index, num}) {
 		<Todo done={`${showTodo.done}`}>
 
 			<p className="num">{num}</p>
-			<p className="title">{showTodo.title}</p>
+			<p 
+				className="title"
+				onClick={() => readTodo()}
+			>
+				{showTodo.title}
+			</p>
 			<Priority type={showTodo.prio.toLowerCase()} title="Priority">{showTodo.prio}</Priority>
-			<p className="date date-1">{showTodo.created}</p>
-			<p className="date date-2">{showTodo.edited}</p>
+			<p 
+				className="date date-1"
+				onClick={() => readTodo()}
+			>
+				{showTodo.created}
+			</p>
+			<p 
+				className="date date-2"
+				onClick={() => readTodo()}
+			>
+				{showTodo.edited}
+			</p>
 			<p
 				className="edit" 
 				title="Edit" 

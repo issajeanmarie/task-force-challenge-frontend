@@ -6,41 +6,53 @@ import {
 	deleteToDo, 
 	doneToDo, 
 	changeDelete,
-	changeEdit 
+	changeEdit,
+	changeRead,
+	changeShow
 } from '../Redux/Actions/index.jsx';
 import { MdEdit } from 'react-icons/md';
 import { GrFormClose } from 'react-icons/gr';
 
-function ReadTodo() {
+function ReadTodo({className}) {
 
 	//Function to delete todo
 	const dispatch = useDispatch();
 	const oldState = useSelector(state => state.showTodos);
 	const oldDelete = useSelector(state => state.changeDelete);
 	const oldEdit = useSelector(state => state.changeEdit);
+	const oldRead = useSelector(state => state.changeRead);
+
+	//Get data to show
+	const newTodo = oldState[oldRead] || {};
 
 	const Done = () => {
 		//Change state
 		const newState = [...oldState];
-		newState[4].done = true;
+		newState[oldRead].done = true;
 
-		dispatch(doneToDo(newState))
+		//Change my to do too
+		dispatch(doneToDo(newState));
+	}
+
+	//Close the read document
+	const CloseIT = () => {
+		dispatch(changeShow(false));
 	}
 
 	//Function to close input
 	const openForm = () => {
-		// const wrapper = document.querySelector('#deleteWrapper');
-		// wrapper.classList.remove('close');
+		const wrapper = document.querySelector('#deleteWrapper');
+		wrapper.classList.remove('close');
 
 		//Create GLOBAL STORE FOR ID TO DELETE
-		dispatch(changeDelete(4));
+		dispatch(changeDelete(oldRead));
 	}
 	const openEditForm = () => {
-		// const wrapper = document.querySelector('#editWrapper');
-		// wrapper.classList.remove('close');
+		const wrapper = document.querySelector('#editWrapper');
+		wrapper.classList.remove('close');
 
 		//Create GLOBAL STORE FOR ID TO EDIT
-		dispatch(changeEdit(4));
+		dispatch(changeEdit(oldRead));
 	}
 
 	const Element = styled.div`
@@ -49,23 +61,23 @@ function ReadTodo() {
 		height: 700px;
 		border-radius: 4px;
 		margin: -160px auto 2% auto;
-		padding: 20px;
 
 		.title{
 			color: #0C0D0D;
-			font-size: 1.5em;
-			padding: 20px 6px;
+			font-size: 1.6em;
+			padding: 20px 30px;
 		}
 
 		p.desc{
-			padding: 6px;
+			padding: 6px 30px;
 			color: #1C2834;
 			font-weight: bold;
+			font-size: 0.9em;
 			span{
 				display: block;
 				color: #495D69;
-				padding-top: 10px;
-				font-size: 0.73em;
+				padding-top: 6px;
+				font-size: 0.76em;
 			}
 		}
 
@@ -102,11 +114,11 @@ function ReadTodo() {
 
 	//Styles
 	const Todo = styled.div`
-		padding-bottom: 10px;
+		padding: 20px;
 		width: 100%;
 		margin: 8px;
-		display: grid;
-		grid-template-columns: 20px 1fr 1fr 150px 90px 120px 1fr 30px 30px 120px;
+		display: ${props => props.done === 'true' ? 'flex' : 'grid'};
+		grid-template-columns: 20px 1fr 1fr 150px 1fr 5% 90px 30px 30px 120px;
 		align-items: center;
 		grid-column-gap: 3px;
 		box-sizing: border-box;
@@ -144,7 +156,7 @@ function ReadTodo() {
 		.delete{
 			position: ${props => props.done === 'true' ? 'absolute' : ''};
 			opacity: 1;
-			right: 0;
+			right: 30px;
 		}
 
 		.edit{
@@ -191,24 +203,24 @@ function ReadTodo() {
 	`;
 
 	return (
-		<Element>
+		<Element className={className}>
 			<Header>
 				<img src='./img/IB_logo.png' alt="Awesomity" />
-				<span><GrFormClose /></span>
+				<span onClick={CloseIT}><GrFormClose /></span>
 			</Header>
 			<Content></Content>
 			<br />
 
-			<Todo done='false'>
+			<Todo done={`${newTodo.done}`}>
 
-				<Priority type='low' title="Priority">Low</Priority>
-				<p className="date date-1">Created 22/June</p>
-				<p className="date date-2">Modified 22/July</p>
+				<Priority type={newTodo.prio?.toLowerCase()} title="Priority">{newTodo.prio}</Priority>
+				<p className="date date-1">{newTodo.created}</p>
+				<p className="date date-2">{newTodo.edited}</p>
 				<p
 					className="edit" 
 					title="Edit" 
-					done='false'
 					onClick={() => openEditForm()}
+					done={`${newTodo.done}`}
 				>
 					<MdEdit />
 				</p>
@@ -217,12 +229,13 @@ function ReadTodo() {
 					className="delete" 
 					title="Delete"
 					onClick={() => openForm()}
+					done={`${newTodo.done}`}
 				>
 					<GrFormClose />
 				</p>
 
 				<button
-					className="Done" title="Done" done='false'
+					className="Done" title="Done" done={`${newTodo.done}`}
 					onClick={Done}
 				>
 					Done
@@ -230,11 +243,11 @@ function ReadTodo() {
 
 		</Todo>
 
-		<h1 className="title">Buy hand sanitizer</h1>
+		<h1 className="title">{newTodo.title}</h1>
 		<p className="desc">
 			Description <br />
 			<span>
-				Call BH to comfirm with the quantity and the price. Remember the TIN number too.
+				{newTodo.desc}
 			</span>
 		</p>
 

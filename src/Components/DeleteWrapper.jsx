@@ -2,7 +2,7 @@ import React from 'react';
 import reactDOM from 'react-dom';
 import { GrFormClose } from 'react-icons/gr';
 import { TheButton } from './Header.jsx';
-import { deleteToDo, changeDelete } from '../Redux/Actions/index.jsx'
+import { deleteToDo, changeDelete, changeShow } from '../Redux/Actions/index.jsx'
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
@@ -31,6 +31,9 @@ function DeleteWrapper() {
 
 		//Close the wrapper
 		close();
+
+		//Close read cont if open
+		dispatch(changeShow(false));
 	}
 
 	const Button = styled.button`

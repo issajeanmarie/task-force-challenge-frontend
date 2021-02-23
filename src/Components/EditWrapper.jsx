@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import reactDOM from 'react-dom';
-import { changeEdit, editToDo } from '../Redux/Actions/index.jsx';
+import { changeEdit, editToDo, changeShow } from '../Redux/Actions/index.jsx';
 import { GrFormClose } from 'react-icons/gr';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
@@ -31,6 +31,9 @@ function EditWrapper() {
 
 	const submitForm = e => {
 		e.preventDefault();
+
+		//Close the read if open
+		dispatch(changeShow(false));
 
 		//Validate form
 		if ((title == ' ') || (desc == ' ')) {

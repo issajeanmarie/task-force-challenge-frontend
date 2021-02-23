@@ -41,3 +41,13 @@ export const filterTodo = (val) =>({
 	type: 'FILTER',
 	payload: val
 })
+
+export const changeRead = (val) => ({
+	type: 'CHANGE_READ_ID',
+	payload: val
+})
+
+export const changeShow = (val) => ({
+	type: 'CHANGE_SHOW_STATUS',
+	payload: val
+})
