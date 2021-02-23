@@ -10,7 +10,6 @@ function FilterChoice() {
 	const filter = e => {
 		//Set state
 		dispatch(filterTodo(e));
-		console.log(e)
 	}
 
 	return (
