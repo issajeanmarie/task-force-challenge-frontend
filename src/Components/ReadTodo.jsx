@@ -83,27 +83,6 @@ function ReadTodo({className}) {
 
 	`;
 
-	const Header = styled.div`
-		padding: 20px;
-		display: flex:
-		justify-content: center;
-		align-items: center;
-		position: relative;
-
-		img{
-			width: 30px;
-		}
-
-		span{
-			position: absolute;
-			right: 30px;
-			font-weight: bold;
-			font-size: 1.5em;
-			top: 25px;
-			cursor: pointer;
-		}
-	`;
-
 	const Content = styled.div`
 		width: 100%;
 		height: 250px;
@@ -204,10 +183,10 @@ function ReadTodo({className}) {
 
 	return (
 		<Element className={className}>
-			<Header>
+			<div className="Header-read">
 				<img src='./img/IB_logo.png' alt="Awesomity" />
 				<span onClick={CloseIT}><GrFormClose /></span>
-			</Header>
+			</div>
 			<Content></Content>
 			<br />
 
