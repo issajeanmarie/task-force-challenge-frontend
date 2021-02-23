@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Header, TheButton } from './Header.jsx';
 import Menu from './Menu.jsx';
 import Contents from './Contents/index.jsx';
+import ReadTodo from './ReadTodo.jsx';
 
 function Index() {
 
@@ -24,11 +25,12 @@ function Index() {
 	return (
 		<React.Fragment>
 			<BlackCont />
-			<Element className="shadow">
+			<ReadTodo />
+			{/*<Element className="shadow allElements">
 				<Header />
 				<Menu></Menu>
 				<Contents Button = {TheButton} />
-			</Element>
+			</Element>*/}
 		</React.Fragment>
 	)
 }
