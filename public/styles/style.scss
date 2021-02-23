@@ -343,7 +343,6 @@ button.theButton{
 	background: #FFFFFF;
 	padding: 12px;
 	border-radius: 4px;
-	width: 130px;
 
 	h1{
 		color: #C1CF16;
@@ -383,19 +382,20 @@ button.theButton{
 	box-sizing: border-box;
 
 	//Make Scroll
-	::-webkit-scrollbar {
+	&::-webkit-scrollbar {
 	  width: 7px;
+	  height: 7px;
 	}
 
-	::-webkit-scrollbar-track {
+	&::-webkit-scrollbar-track {
 	  background: #F4F5F6;
 	}
 
-	::-webkit-scrollbar-thumb {
+	&::-webkit-scrollbar-thumb {
 	  background: #495D69;
 	}
 
-	::-webkit-scrollbar-thumb:hover {
+	&::-webkit-scrollbar-thumb:hover {
 	  background: #1C2834;
 	}
 
@@ -410,4 +410,61 @@ button.theButton{
 
 .priorities.close, .hide_read{
 	display: none;
+}
+
+
+
+
+//RESPONSIVENESS
+@media screen and (max-width: 768px) {
+	.elements{
+		width: 98%;
+		margin-top: -230px;
+
+		.Header{
+			.logo{
+				flex: 1fr;
+				margin-right: 10px;
+			}
+
+			.rightMenu{
+				flex: 1fr;
+
+				.filterCont{
+					margin-right: -5px;
+				}
+
+				.theButton{
+					flex: 30px;
+					position: absolute;
+					top: 80px;
+					left: -7px;
+					width: 10px;
+					z-index: 2;
+				}
+			}
+		}
+	}
+
+	.searchBox{
+		width: 200px;
+
+		button{
+			display: none;
+		}
+	}
+
+
+	.deleteTodo, .newTodo{
+		width: 95%;
+		z-index: 3;
+	}
+
+	.Menu{
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+		grid-column-gap: 15px;
+		grid-row-gap: 20px;
+		justify-item: center;
+	}
 }

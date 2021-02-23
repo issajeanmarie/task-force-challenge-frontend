@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Search from './Search.jsx';
-
+import { showToDos } from '../Redux/Actions/index.jsx';
+import { useSelector, useDispatch } from 'react-redux';
 import { BiFilter } from 'react-icons/bi';
 
 export function Header() {
 
+	const dispatch = useDispatch();
 	const [state, setState] = useState(false);
 
 	useEffect(() => {
@@ -15,6 +17,7 @@ export function Header() {
 			filters.classList.remove('close');
 		} else{
 			filters.classList.add('close');
+			dispatch(showToDos());
 		}
 	})
 

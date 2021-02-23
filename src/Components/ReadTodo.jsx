@@ -62,6 +62,11 @@ function ReadTodo({className}) {
 		border-radius: 4px;
 		margin: -160px auto 2% auto;
 
+		@media screen and (max-width: 768px){
+			width: 95%;
+			margin-top: -230px;
+		}
+
 		.title{
 			color: #0C0D0D;
 			font-size: 1.6em;
@@ -97,12 +102,34 @@ function ReadTodo({className}) {
 		width: 100%;
 		margin: 8px;
 		display: ${props => props.done === 'true' ? 'flex' : 'grid'};
-		grid-template-columns: 20px 1fr 1fr 150px 1fr 5% 90px 30px 30px 120px;
+		grid-template-columns: 1fr 1fr 150px 90px 90px 1fr 90px 1fr 30px 30px 80px;
 		align-items: center;
 		grid-column-gap: 3px;
 		box-sizing: border-box;
 		opacity: ${props => props.done === 'true' ? 0.4 : 1};
 		position: relative;
+		overflow: auto;
+
+		//Make Scroll
+		&::-webkit-scrollbar {
+		  height: 7px;
+		}
+
+		&::-webkit-scrollbar-track {
+		  background: #F4F5F6;
+		}
+
+		&::-webkit-scrollbar-thumb {
+		  background: #495D69;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+		  background: #1C2834;
+		}
+
+		@media screen and (max-width: 768px){
+			grid-template-columns: 1fr 1fr 150px 90px 90px 1fr 90px 1fr 30px 30px 80px;
+		}
 
 
 		.date-1, .date-2{

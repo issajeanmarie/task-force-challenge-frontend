@@ -10,7 +10,6 @@ function Contents({Button}) {
 		wrapper.classList.remove('close');
 	}
 
-
 	const showTodos = useSelector(state => state.showTodos);
 	let counter = 1;
 
