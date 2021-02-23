@@ -110,6 +110,10 @@ function Todos({showTodo, index, num}) {
 			position: ${props => props.done === 'true' ? 'absolute' : ''};
 			opacity: 1;
 			right: 0;
+
+			@media screen and (max-width: 768px){
+				position: relative;
+			}
 		}
 
 		.edit{

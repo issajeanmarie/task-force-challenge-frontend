@@ -28,41 +28,60 @@ function Wrapper() {
 			return
 		}
 
-		//Get the date
-		const monthNames = [
-			'Jan', 'Feb', 'Mar',
-			'Apr', 'May', 'Jun',
-			'Jul', 'Aug', 'Sep',
-			'Oct', 'Nov', 'Dec'
-		];
+		const saveData = img => {
+			//Get the date
+			const monthNames = [
+				'Jan', 'Feb', 'Mar',
+				'Apr', 'May', 'Jun',
+				'Jul', 'Aug', 'Sep',
+				'Oct', 'Nov', 'Dec'
+			];
 
-		const date  = new Date();
-		const year  = date.getFullYear();
-		const month = monthNames[date.getUTCMonth()];
-		const day	= date.getUTCDate();
+			const date  = new Date();
+			const year  = date.getFullYear();
+			const month = monthNames[date.getUTCMonth()];
+			const day	= date.getUTCDate();
 
-		const created_time = `${day} ${month} ${year}`;
+			const created_time = `${day} ${month} ${year}`;
 
-		//Allow submission
-		const todo = {
-			title: title,
-			desc : desc,
-			prio: priority,
-			created: `Created ${created_time}`,
-			edited: `Edited ${created_time}`,
-			done: false
-		};
+			//Allow submission
+			const todo = {
+				title: title,
+				desc : desc,
+				prio: priority,
+				created: `Created ${created_time}`,
+				edited: `Edited ${created_time}`,
+				done: false,
+				image: img
+			};
 
-		//SUBMIT TO REDUX
-		dispatch(addToDo(todo));
-		
-		//Reset the form
-		setTitle('');
-		setDesc('');
-		setPriority('Low');
+			//SUBMIT TO REDUX
+			dispatch(addToDo(todo));
+			
+			//Reset the form
+			setTitle('');
+			setDesc('');
+			setPriority('Low');
 
-		//Close the wrapper
-		wrapper.classList.add('close');
+			//Close the wrapper
+			wrapper.classList.add('close');
+		}
+
+		//Save image
+		const reader = new FileReader();
+		reader.addEventListener('load', () => {
+			saveData(reader.result)
+		})
+
+		if (image) {
+			if (!image.type.includes('image')) {
+				return
+			}
+			reader.readAsDataURL(image);
+			setImage('')
+		} else{
+			saveData('');
+		}
 
 
 	}
@@ -79,8 +98,8 @@ function Wrapper() {
 				<form action="" onSubmit={submitForm}>
 					<label htmlFor="">Add image</label>
 					<div className="fileWrapper">
-						<p>Tap to add image</p>
-						<input type="file" />
+						<p>{image.name || 'Tap to add image'}</p>
+						<input type="file" onChange={e => setImage(e.target.files[0])} />
 					</div>
 					<br /><br />
 

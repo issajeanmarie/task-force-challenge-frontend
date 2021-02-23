@@ -92,7 +92,8 @@ body{
 		position: relative;
 		font-family: Montserrat, sans-serif;
 		border-radius: 6px;
-		font-size: 0.65em;
+		font-size: 0.75em;
+		word-break: break-all;
 
 		input{
 			position: absolute;
@@ -114,7 +115,7 @@ body{
 		border: none;
 		border-radius: 6px;
 		font-family: Montserrat, sans-serif;
-		font-size: 0.65em;
+		font-size: 0.75em;
 		
 		&:focus{
 			background: #FFFFFF;
@@ -190,11 +191,6 @@ body{
 	margin-right: 10px;
 
 	input{
-		background: #F4F5F6;
-		background-image: url('./img/loupe.png');
-		background-size: 15px;
-		background-repeat: no-repeat;
-		background-position: 6% 50%;
 		border: none;
 		flex: 1 1 auto;
 		height: 35px;
@@ -312,7 +308,6 @@ button.theButton{
 .Header-read{
 	padding: 20px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	position: relative;
 
@@ -343,6 +338,7 @@ button.theButton{
 	background: #FFFFFF;
 	padding: 12px;
 	border-radius: 4px;
+	width: 130px;
 
 	h1{
 		color: #C1CF16;
@@ -382,22 +378,25 @@ button.theButton{
 	box-sizing: border-box;
 
 	//Make Scroll
-	&::-webkit-scrollbar {
-	  width: 7px;
-	  height: 7px;
-	}
+	&::-webkit-scrollbar {height: 7px; width: 7px;}
+	::-moz-scrollbar {height: 7px; width: 7px;}
+	&::-o-scrollbar {height: 7px; width: 7px;}
+	&::scrollbar {height: 7px; width: 7px;}
 
-	&::-webkit-scrollbar-track {
-	  background: #F4F5F6;
-	}
+	&::-webkit-scrollbar-track {background: #F4F5F6;}
+	&::-moz-scrollbar-track {background: #F4F5F6;}
+	&::-o-scrollbar-track {background: #F4F5F6;}
+	&::scrollbar-track {background: #F4F5F6;}
 
-	&::-webkit-scrollbar-thumb {
-	  background: #495D69;
-	}
+	&::-webkit-scrollbar-thumb {background: #495D69;}
+	&::-moz-scrollbar-thumb {background: #495D69;}
+	&::-o-scrollbar-thumb {background: #495D69;}
+	&::scrollbar-thumb {background: #495D69;}
 
-	&::-webkit-scrollbar-thumb:hover {
-	  background: #1C2834;
-	}
+	&::-webkit-scrollbar-thumb:hover {background: #1C2834;}
+	&::-moz-scrollbar-thumb:hover {background: #1C2834;}
+	&::-o-scrollbar-thumb:hover {background: #1C2834;}
+	&::scrollbar-thumb:hover {background: #1C2834;}
 
 	h1{
 		color: #495D69;
@@ -419,7 +418,7 @@ button.theButton{
 @media screen and (max-width: 768px) {
 	.elements{
 		width: 98%;
-		margin-top: -230px;
+		margin-top: -220px;
 
 		.Header{
 			.logo{
@@ -437,7 +436,7 @@ button.theButton{
 				.theButton{
 					flex: 30px;
 					position: absolute;
-					top: 80px;
+					top: 84px;
 					left: -7px;
 					width: 10px;
 					z-index: 2;
@@ -466,5 +465,9 @@ button.theButton{
 		grid-column-gap: 15px;
 		grid-row-gap: 20px;
 		justify-item: center;
+	}
+
+	.fileWrapper{
+		width: 95%;
 	}
 }

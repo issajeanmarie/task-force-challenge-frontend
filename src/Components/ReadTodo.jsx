@@ -64,7 +64,7 @@ function ReadTodo({className}) {
 
 		@media screen and (max-width: 768px){
 			width: 95%;
-			margin-top: -230px;
+			margin-top: -220px;
 		}
 
 		.title{
@@ -91,7 +91,7 @@ function ReadTodo({className}) {
 	const Content = styled.div`
 		width: 100%;
 		height: 250px;
-		background-image: url('./img/IB_logo.png');
+		background-image: url('${newTodo.image || './img/IB_logo.png'}');
 		background-size: cover;
 		background-repeat: no-repeat;
 	`;
@@ -111,21 +111,25 @@ function ReadTodo({className}) {
 		overflow: auto;
 
 		//Make Scroll
-		&::-webkit-scrollbar {
-		  height: 7px;
-		}
+		::-webkit-scrollbar {height: 7px;}
+		::-moz-scrollbar {height: 7px;}
+		::-o-scrollbar {height: 7px;}
+		::scrollbar {height: 7px;}
 
-		&::-webkit-scrollbar-track {
-		  background: #F4F5F6;
-		}
+		::-webkit-scrollbar-track {background: #F4F5F6;}
+		::-moz-scrollbar-track {background: #F4F5F6;}
+		::-o-scrollbar-track {background: #F4F5F6;}
+		::scrollbar-track {background: #F4F5F6;}
 
-		&::-webkit-scrollbar-thumb {
-		  background: #495D69;
-		}
+		::-webkit-scrollbar-thumb {background: #495D69;}
+		::-moz-scrollbar-thumb {background: #495D69;}
+		::-o-scrollbar-thumb {background: #495D69;}
+		::scrollbar-thumb {background: #495D69;}
 
-		&::-webkit-scrollbar-thumb:hover {
-		  background: #1C2834;
-		}
+		::-webkit-scrollbar-thumb:hover {background: #1C2834;}
+		::-moz-scrollbar-thumb:hover {background: #1C2834;}
+		::-o-scrollbar-thumb:hover {background: #1C2834;}
+		::scrollbar-thumb:hover {background: #1C2834;}
 
 		@media screen and (max-width: 768px){
 			grid-template-columns: 1fr 1fr 150px 90px 90px 1fr 90px 1fr 30px 30px 80px;

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { searchTodo } from '../Redux/Actions/index.jsx';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 
 function Search() {
@@ -16,9 +17,17 @@ function Search() {
 		dispatch(searchTodo(e.target.value));
 	}
 
+	const Input = styled.input`
+		background: #F4F5F6;
+		background-image: url('./img/loupe.png');
+		background-size: 15px;
+		background-repeat: no-repeat;
+		background-position: 6% 50%;
+	`;
+
 	return (
 		<div className="searchBox">
-			<input
+			<Input
 				type="search"
 				placeholder="Search"
 				name=""
