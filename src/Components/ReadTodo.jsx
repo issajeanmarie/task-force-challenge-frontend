@@ -30,6 +30,10 @@ function ReadTodo({className}) {
 	//Get data to show
 	const newTodo = oldState[oldRead] || {};
 
+/**
+ *Sends data to redux which tells to make a todo done
+ @const Done
+*/
 	const Done = () => {
 		//Change state
 		const newState = [...oldState];
@@ -38,6 +42,11 @@ function ReadTodo({className}) {
 		//Change my to do too
 		dispatch(doneToDo(newState));
 	}
+
+/**
+ *Changes the status to close the todo being read
+ @const Done
+*/
 
 	//Close the read document
 	const CloseIT = () => {
