@@ -1,7 +1,5 @@
 # Task Force Challenge - Frontend
 
-Click [here to view project](https://issajeanmarie.github.io/task-force-challenge-frontend)
-
 
 ## INSTALLATION PROCCESS
 	
