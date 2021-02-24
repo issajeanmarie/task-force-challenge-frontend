@@ -14,7 +14,7 @@
  * Styled-components
  * React-icons
  * JSdoc
- * gh-pages
+ * Axios
 
 
 ### Folder Structure
