@@ -15,13 +15,6 @@ function Menu() {
 	//Closed high tasks
 	const closedHigh = showTodos.filter(showTodo => (showTodo.done === true && showTodo.prio === 'High'));
 
-	const types = [
-		'Total Tasks',
-		'Active Tasks',
-		'Tasks Done',
-		'Active High Priority',
-		'Closed High Priority' 
-	];
 
 	return (
 		<React.Fragment>

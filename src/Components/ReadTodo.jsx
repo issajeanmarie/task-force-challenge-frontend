@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Todos from './Contents/index.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { 
-	deleteToDo, 
 	doneToDo, 
 	changeDelete,
 	changeEdit,
-	changeRead,
 	changeShow
 } from '../Redux/Actions/index.jsx';
 import { MdEdit } from 'react-icons/md';
@@ -23,8 +20,6 @@ function ReadTodo({className}) {
 	//Function to delete todo
 	const dispatch = useDispatch();
 	const oldState = useSelector(state => state.showTodos);
-	const oldDelete = useSelector(state => state.changeDelete);
-	const oldEdit = useSelector(state => state.changeEdit);
 	const oldRead = useSelector(state => state.changeRead);
 
 	//Get data to show
@@ -238,8 +233,8 @@ function ReadTodo({className}) {
 			<Todo done={`${newTodo.done}`}>
 
 				<Priority type={newTodo.prio?.toLowerCase()} title="Priority">{newTodo.prio}</Priority>
-				<p className="date date-1">{newTodo.created}</p>
-				<p className="date date-2">{newTodo.edited}</p>
+				<p className="date date-1">{'Created '+newTodo.created}</p>
+				<p className="date date-2">{'Modified '+newTodo.edited}</p>
 				<p
 					className="edit" 
 					title="Edit" 

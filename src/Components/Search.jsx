@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import { AiOutlineSearch } from 'react-icons/ai';
+import React, { useState } from 'react';
 import { searchTodo } from '../Redux/Actions/index.jsx';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 /**
  *SEARCH METHOD.  

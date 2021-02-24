@@ -1,8 +1,6 @@
 import React from 'react';
 import reactDOM from 'react-dom';
-import { GrFormClose } from 'react-icons/gr';
-import { TheButton } from './Header.jsx';
-import { deleteToDo, changeDelete, changeShow } from '../Redux/Actions/index.jsx'
+import { deleteToDo, changeShow } from '../Redux/Actions/index.jsx'
 import { useSelector, useDispatch } from 'react-redux';
 
 

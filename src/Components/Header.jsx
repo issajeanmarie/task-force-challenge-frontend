@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Search from './Search.jsx';
 import { showToDos } from '../Redux/Actions/index.jsx';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BiFilter } from 'react-icons/bi';
 
 export function Header() {

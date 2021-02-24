@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { 
-	deleteToDo, 
 	doneToDo, 
 	changeDelete,
 	changeEdit,
@@ -18,10 +17,6 @@ function Todos({showTodo, index, num}) {
 	//Function to delete todo
 	const dispatch = useDispatch();
 	const oldState = useSelector(state => state.showTodos);
-	const oldDelete = useSelector(state => state.changeDelete);
-	const oldEdit = useSelector(state => state.changeEdit);
-	const oldRead = useSelector(state => state.changeRead);
-	const oldShow = useSelector(state => state.changeShow);
 
 	const Done = () => {
 		//Change state

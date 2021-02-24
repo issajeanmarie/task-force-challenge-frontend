@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import reactDOM from 'react-dom';
-import { changeEdit, editToDo, changeShow } from '../Redux/Actions/index.jsx';
+import { editToDo } from '../Redux/Actions/index.jsx';
 import { GrFormClose } from 'react-icons/gr';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -27,7 +27,6 @@ function EditWrapper() {
 	const oldTitle = oldTodos[oldEditID]?.title;
 	const oldDesc = oldTodos[oldEditID]?.desc;
 	const oldPriority = oldTodos[oldEditID]?.prio;
-	const oldDate = oldTodos[oldEditID]?.created;
 
 	const [title, setTitle] = useState('');
 	const [desc, setDesc] = useState('');
@@ -36,11 +35,8 @@ function EditWrapper() {
 	const submitForm = e => {
 		e.preventDefault();
 
-		//Close the read if open
-		dispatch(changeShow(false));
-
 		//Validate form
-		if ((title == ' ') || (desc == ' ')) {
+		if ((title === '') || (desc === '')) {
 			return;
 		}
 

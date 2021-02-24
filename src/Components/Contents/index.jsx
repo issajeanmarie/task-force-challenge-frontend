@@ -17,7 +17,7 @@ function Contents({Button}) {
 		<div className="Contents">
 
 			{
-				showTodos.length == 0 ? 
+				showTodos.length === 0 ? 
 				<Empty Button={Button} onClick={openForm} />
 				:
 				<>

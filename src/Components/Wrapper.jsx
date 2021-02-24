@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import reactDOM from 'react-dom';
 import { addToDo } from '../Redux/Actions/index.jsx';
 import { GrFormClose } from 'react-icons/gr';
 import { TheButton } from './Header.jsx';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 /**
  *This method Wrapper adds the new todo.  
@@ -12,7 +12,6 @@ import { useSelector, useDispatch } from 'react-redux';
 */
 function Wrapper() {
 
-	const oldTodos = useSelector(state => state.showTodos);
 	const dispatch = useDispatch();
 
 	//Function to close input
