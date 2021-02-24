@@ -61,4 +61,4 @@ __* Components__ Stores all of the components
 __* Redux__ Sotres all ___actions___ and ___Reducers___
 
 	If you want to see documentation, go here:  
-	[Click to see documentation](./public/documentation/index.html)
+	[Click to see documentation](https://github.com/issajeanmarie/task-force-challenge-frontend)
