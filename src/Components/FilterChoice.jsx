@@ -2,6 +2,11 @@ import React from 'react';
 import { filterTodo } from '../Redux/Actions/index.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 
+/**
+ *This method filters the todo list. It returns todos based on the
+ chosen priority.
+ @function FilterChoice
+*/
 function FilterChoice() {
 
 	const dispatch = useDispatch();

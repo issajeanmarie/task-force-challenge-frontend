@@ -13,6 +13,11 @@ import {
 import { MdEdit } from 'react-icons/md';
 import { GrFormClose } from 'react-icons/gr';
 
+/**
+ *This module takes the data to be shown an displays it.  
+ It only depends on global state
+ @module ReadTodo
+*/
 function ReadTodo({className}) {
 
 	//Function to delete todo

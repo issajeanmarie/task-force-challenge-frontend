@@ -2,7 +2,6 @@ import React from 'react';
 
 function SingleMenu({type, number}) {
 
-
 	return (
 		<div className="singleMenu shadow-md">
 			<h1>{number}</h1>

@@ -4,6 +4,11 @@ import { changeEdit, editToDo, changeShow } from '../Redux/Actions/index.jsx';
 import { GrFormClose } from 'react-icons/gr';
 import { useSelector, useDispatch } from 'react-redux';
 
+/**
+ *This method allows to edit todos
+ It takes inputs and changes the todo list in global state
+ @function EditWrapper
+*/
 function EditWrapper() {
 
 	//Get the ID of element to edit

@@ -3,12 +3,21 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { searchTodo } from '../Redux/Actions/index.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 
-
+/**
+ *SEARCH METHOD.  
+ *This method allows the user to make a search. 
+ *It takes input and change the global state of todoes.
+ @module Search
+*/
 function Search() {
 
 	const dispatch = useDispatch();
 	const [searchValue, setSearchValue] = useState('');
 
+/**
+ *This function takes the user's input to make search.
+ *function triggerSearch
+*/
 	const triggerSearch = (e) => {
 		setSearchValue(e.target.value);
 
@@ -24,7 +33,7 @@ function Search() {
 	}
 
 	return (
-		<div className="searchBox">
+		<div className="searchBox" data-testid="searchBox">
 			<input
 				style={style}
 				type="search"

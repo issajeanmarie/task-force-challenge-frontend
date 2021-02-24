@@ -1,29 +1,30 @@
-#Task Force Challenge - Frontend
+# Task Force Challenge - Frontend
 
 
-##INSTALLATION PROCCESS
+## INSTALLATION PROCCESS
 	
  1. Clone the repository
  2. Type __yarn install__ (To install packages)
  3. Type __yarn start__ (To start the server)
 
 
-###Installed packages
+### Installed packages
 
  * Redux
  * Styled-components
  * React-icons
  * JSdoc
+ * Axios
 
 
-###Folder Structure
+### Folder Structure
 
 There are two main folders  
  1. public
  2. src
 
 
-##public
+## public
 
 In __public__ folder is where everything public is.  
 Public things are, __images__, __styles__, and __index.html__ file  
@@ -32,12 +33,13 @@ Public things are, __images__, __styles__, and __index.html__ file
 ___THE STRUCTURE___
 
 	 -public
+	 	-documentation
 	 	-img
 	 	-styles (SASS files)
 	 	index.html
 
 
-##src
+## src
 
 In __src__ folder is where everything runs.  
 It contains __Components__, __Redux__, __index.js__, and __App.js__ file  

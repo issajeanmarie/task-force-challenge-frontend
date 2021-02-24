@@ -5,6 +5,13 @@ import { TheButton } from './Header.jsx';
 import { deleteToDo, changeDelete, changeShow } from '../Redux/Actions/index.jsx'
 import { useSelector, useDispatch } from 'react-redux';
 
+
+/**
+ *This method deletes todo.  
+ It takes the id to delete from global state and filter the todos  
+ and saves the new filtered global state.
+ @function DeleteWrapper
+*/
 function DeleteWrapper() {
 
 	const oldTodos = useSelector(state => state.showTodos);

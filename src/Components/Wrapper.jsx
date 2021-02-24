@@ -5,6 +5,11 @@ import { GrFormClose } from 'react-icons/gr';
 import { TheButton } from './Header.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 
+/**
+ *This method Wrapper adds the new todo.  
+ It takes the title, descripiom priority and generates dates itself.
+ @module Wrapper
+*/
 function Wrapper() {
 
 	const oldTodos = useSelector(state => state.showTodos);
@@ -21,6 +26,10 @@ function Wrapper() {
 	const [desc, setDesc] = useState('');
 	const [priority, setPriority] = useState('Low');
 
+/**
+ *Handles the input events in all fields
+ @const submitForm
+*/
 	const submitForm = e => {
 		e.preventDefault();
 		//Validate the form
@@ -28,6 +37,11 @@ function Wrapper() {
 			return
 		}
 
+/**
+ *Saves data if the and the image passed to id.  
+ The image should be or not.
+ @const saveData
+*/
 		const saveData = img => {
 			//Get the date
 			const monthNames = [
@@ -49,8 +63,8 @@ function Wrapper() {
 				title: title,
 				desc : desc,
 				prio: priority,
-				created: `Created ${created_time}`,
-				edited: `Edited ${created_time}`,
+				created: created_time,
+				edited: ', not modified',
 				done: false,
 				image: img
 			};
@@ -88,7 +102,7 @@ function Wrapper() {
 
 	return reactDOM.createPortal (
 		<React.Fragment>
-			<div className="newTodo">
+			<div className="newTodo" data-testid="newTodo">
 
 				<div className="Close" title="Close" onClick={close}>
 					<GrFormClose />

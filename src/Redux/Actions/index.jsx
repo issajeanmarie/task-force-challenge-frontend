@@ -12,6 +12,7 @@ export const deleteToDo = (payload) => ({
 	payload: payload
 })
 
+
 export const doneToDo = (payload) => ({
 	type: 'DONE_TODO',
 	payload: payload

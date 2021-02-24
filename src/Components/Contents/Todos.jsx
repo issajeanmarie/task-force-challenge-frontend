@@ -160,7 +160,7 @@ function Todos({showTodo, index, num}) {
 	`;
 
 	return (
-		<Todo done={`${showTodo.done}`}>
+		<Todo done={`${showTodo.done}`} data-testid="todos">
 
 			<p className="num">{num}</p>
 			<p 
@@ -174,13 +174,13 @@ function Todos({showTodo, index, num}) {
 				className="date date-1"
 				onClick={() => readTodo()}
 			>
-				{showTodo.created}
+				{'Created '+showTodo.created}
 			</p>
 			<p 
 				className="date date-2"
 				onClick={() => readTodo()}
 			>
-				{showTodo.edited}
+				{'Modified '+showTodo.edited}
 			</p>
 			<p
 				className="edit" 

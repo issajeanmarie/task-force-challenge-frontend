@@ -26,7 +26,7 @@ function Index({className}) {
 
 	return (
 		<React.Fragment>
-			<div className='blackCont'></div>
+			<div className='blackCont' data-testid="whole-components"></div>
 			<ReadTodo className={show} />
 			<div className={`elements shadow ${hide}`}>
 				<Header />
