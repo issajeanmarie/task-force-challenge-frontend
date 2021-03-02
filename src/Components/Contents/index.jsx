@@ -1,6 +1,7 @@
 import Empty from './Empty.jsx';
 import Todos from './Todos.jsx';
-import {useSelector} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteAll } from '../../Redux/Actions/index.jsx';
 
 function Contents({Button}) {
 
@@ -11,6 +12,7 @@ function Contents({Button}) {
 	}
 
 	const showTodos = useSelector(state => state.showTodos);
+	const dispatch = useDispatch()
 	let counter = 1;
 
 	return(
@@ -31,7 +33,7 @@ function Contents({Button}) {
 						))
 					}
 
-					<button className="delete">Delete all</button>
+					<button className="delete" onClick={() => dispatch(deleteAll())}>Delete all</button>
 				</>
 			}
 		</div>

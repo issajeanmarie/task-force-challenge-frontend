@@ -52,3 +52,7 @@ export const changeShow = (val) => ({
 	type: 'CHANGE_SHOW_STATUS',
 	payload: val
 })
+
+export const deleteAll = () => ({
+	type: 'DELETE_ALL'
+})
