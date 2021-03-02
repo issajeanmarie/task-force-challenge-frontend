@@ -1,6 +1,7 @@
 import Elements from './Components/index.jsx';
 import Wrapper from './Components/Wrapper.jsx';
 import DeleteWrapper from './Components/DeleteWrapper.jsx';
+import DeleteAllWrapper from './Components/DeleteAllWrapper.jsx';
 import EditWrapper from './Components/EditWrapper.jsx';
 
 /**
@@ -14,6 +15,7 @@ function App() {
         <Elements />
         <Wrapper />
         <DeleteWrapper />
+        <DeleteAllWrapper />
         <EditWrapper />
       </>
   );

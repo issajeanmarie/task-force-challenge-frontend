@@ -1,7 +1,6 @@
 import Empty from './Empty.jsx';
 import Todos from './Todos.jsx';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteAll } from '../../Redux/Actions/index.jsx';
 
 function Contents({Button}) {
 
@@ -12,9 +11,15 @@ function Contents({Button}) {
 	}
 
 	const showTodos = useSelector(state => state.showTodos);
-	const dispatch = useDispatch()
 	let counter = 1;
 
+	//Function to close input
+	const wrapper = document.querySelector('#deleteAllWrapper');
+
+	const openDeleter = () => {
+		wrapper.classList.remove('close');
+	}
+ 
 	return(
 		<div className="Contents">
 
@@ -33,7 +38,7 @@ function Contents({Button}) {
 						))
 					}
 
-					<button className="delete" onClick={() => dispatch(deleteAll())}>Delete all</button>
+					<button className="delete" onClick={openDeleter}>Delete all</button>
 				</>
 			}
 		</div>
