@@ -30,6 +30,8 @@ function Contents({Button}) {
 							<Todos showTodo={showTodo} key={counter+1} index={index} num={counter++} />
 						))
 					}
+
+					<button className="delete">Delete all</button>
 				</>
 			}
 		</div>
