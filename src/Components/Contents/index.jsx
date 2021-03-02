@@ -1,6 +1,6 @@
 import Empty from './Empty.jsx';
 import Todos from './Todos.jsx';
-import {useSelector} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Contents({Button}) {
 
@@ -13,6 +13,13 @@ function Contents({Button}) {
 	const showTodos = useSelector(state => state.showTodos);
 	let counter = 1;
 
+	//Function to close input
+	const wrapper = document.querySelector('#deleteAllWrapper');
+
+	const openDeleter = () => {
+		wrapper.classList.remove('close');
+	}
+ 
 	return(
 		<div className="Contents">
 
@@ -30,6 +37,8 @@ function Contents({Button}) {
 							<Todos showTodo={showTodo} key={counter+1} index={index} num={counter++} />
 						))
 					}
+
+					<button className="delete" onClick={openDeleter}>Delete all</button>
 				</>
 			}
 		</div>

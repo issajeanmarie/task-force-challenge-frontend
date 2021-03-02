@@ -10,6 +10,10 @@ const showTodos = (state = stateVal, action) => {
 		case 'SHOW_TODO':
 			return state = stateVal;
 
+		case 'DELETE_ALL':
+			localStorage.setItem('todoList', JSON.stringify([]));
+			return state = [];
+
 		case 'SEARCH':
 			{
 				//Filter array
